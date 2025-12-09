@@ -6,10 +6,12 @@ import { useSelector } from "react-redux";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Badge from "@mui/material/Badge";
 import { useNavigate } from "react-router-dom";
+
 export default function Navbar() {
   const { token } = useSelector((state) => state.auth);
   const cartLength = useSelector((state) => state.cart.items).length;
   const navigate = useNavigate();
+
   return (
     <Box
       component={"nav"}
@@ -17,7 +19,6 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        px: "32px",
         py: "12px",
       }}
     >
@@ -50,7 +51,7 @@ export default function Navbar() {
         <Link
           sx={{
             color: "black",
-            opacity : '0.7' ,
+            opacity: "0.7",
             transition: "all .5s",
             p: "3px",
             borderRadius: "10px",
