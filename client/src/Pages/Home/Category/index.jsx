@@ -25,8 +25,8 @@ export default function Category() {
     >
       <Box sx={{ height: "100%", width: "50%" }}>{items[2]}</Box>
       <Box sx={{ display: "flex", flexDirection: "column", gap: "32px" , height: "100%", width: "50%" }}>
-        <Box sx={{ height: "47%", width: "100%" }}>{items[1]}</Box>
-        <Box sx={{ height: "47%", width: "100%" }}>{items[0]}</Box>
+        <Box sx={{ height: "48%", width: "100%" }}>{items[1]}</Box>
+        <Box sx={{ height: "48%", width: "100%" }}>{items[0]}</Box>
       </Box>
     </Box>
   );
