@@ -12,7 +12,7 @@ export default function Category() {
     })();
   }, []);
   const items = categories?.map((category) => (
-    <CategoryCard key={category?.id} category={category} />
+    <CategoryCard key={category?.documentId} category={category} />
   ));
   return (
     <Box

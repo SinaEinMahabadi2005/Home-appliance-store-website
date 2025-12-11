@@ -19,7 +19,7 @@ export default function CategoryCard({ category }) {
       }}
       onClick={() =>
           navigate(
-            `/products/${category.id}/${category.title.replaceAll(" ", "-")}`
+            `/products/${category.documentId}/${category.title.replaceAll(" ", "-")}`
           )
         }
     >
