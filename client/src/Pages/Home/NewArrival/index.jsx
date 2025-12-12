@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
+import { Scrollbar } from 'swiper/modules';
 import "./style.css";
 
 // import required modules
@@ -81,7 +81,10 @@ export default function NewArrival() {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination]}
+          scrollbar={{
+          hide: false,
+        }}
+        modules={[Pagination,Scrollbar]}
         className="newSwiper"
       >
         {items}
