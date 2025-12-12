@@ -20,6 +20,14 @@ export default function NewArrivalCard({ product }) {
       rotateYMax={20}
       shadow={false}
       style={{ width: "100%", height: "100%" }}
+      onClick={() =>
+                navigate(
+                  `/product-details/${product.documentId}/${product.name.replaceAll(
+                    " ",
+                    "-"
+                  )}`
+                )
+              }
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -37,6 +45,7 @@ export default function NewArrivalCard({ product }) {
             borderRadius: "2px",
             overflow: "hidden",
           }}
+          
         >
           <Box
             sx={{
