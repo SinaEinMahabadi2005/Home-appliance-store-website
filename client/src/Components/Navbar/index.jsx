@@ -75,7 +75,7 @@ export default function Navbar() {
               boxShadow: " 0 0 10px 10px rgba(220, 104, 16, 0.3)",
             },
           }}
-          href="/product"
+          href="/products/all/all-category"
         >
           Product
         </Link>
