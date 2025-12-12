@@ -19,7 +19,7 @@ export default function NewArrival() {
     const navigate=useNavigate()
     useEffect(()=>{
         (async()=>{
-            const response=await fetchData('products?pagination[page]=1&pagination[pageSize]=7&populate=*')
+            const response=await fetchData('products?pagination[page]=1&pagination[pageSize]=7&sort=createdAt:desc&populate=*')
             setNewArrivals(response?.data)
         })()
     },[])
@@ -37,6 +37,7 @@ export default function NewArrival() {
         marginTop: "64px",
         marginBottom: "64px",
         px: "132px",
+        
       }}
     >
       <Box
