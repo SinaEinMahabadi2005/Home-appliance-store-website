@@ -6,6 +6,7 @@ import NewArrival from './NewArrival'
 import CartBox from './CartBox'
 import Hundreds from './Hundreds'
 import Articles from './Articles'
+import JoinSection from './JoinSection'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CartBox/>
       <Hundreds/>
       <Articles/>
+      <JoinSection/>
     </>
   )
 }
