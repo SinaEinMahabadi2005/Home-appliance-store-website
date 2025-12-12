@@ -1,0 +1,11 @@
+.swiper.newSwiper {
+  width: 100%;
+  height: 80%;
+  cursor: pointer;
+}
+.swiper.newSwiper .swiper-slide{
+    height: 100%;
+    width: 260px;
+   
+}
+
