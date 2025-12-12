@@ -4,6 +4,7 @@ import Simply from './Simply'
 import Category from './Category'
 import NewArrival from './NewArrival'
 import CartBox from './CartBox'
+import Hundreds from './Hundreds'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Category/>
       <NewArrival/>
       <CartBox/>
+      <Hundreds/>
     </>
   )
 }
