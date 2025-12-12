@@ -20,6 +20,7 @@ export default function Navbar() {
         justifyContent: "space-between",
         alignItems: "center",
         py: "12px",
+        px: "132px",
       }}
     >
       <Typography component={"h1"} variant="h4" sx={{ fontWeight: "bold" }}>

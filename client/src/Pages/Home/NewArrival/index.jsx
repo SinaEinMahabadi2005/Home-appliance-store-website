@@ -36,6 +36,7 @@ export default function NewArrival() {
         gap: "48px",
         marginTop: "64px",
         marginBottom: "64px",
+        px: "132px",
       }}
     >
       <Box

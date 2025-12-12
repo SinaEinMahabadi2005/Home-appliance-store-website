@@ -32,6 +32,7 @@ console.log(sliders)
         width: "100%",
         margin: "0 auto",
         overflow: "hidden",
+        px: "132px",
       }}
     >
       <Swiper

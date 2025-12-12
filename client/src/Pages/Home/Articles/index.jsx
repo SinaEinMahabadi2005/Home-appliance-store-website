@@ -16,21 +16,6 @@ export default function Articles() {
     }),
   };
 
-  const articles = [
-    {
-      img: "/images/static2.png",
-      title: "7 ways to decor your home",
-    },
-    {
-      img: "/images/static3.png",
-      title: "Kitchen organization",
-    },
-    {
-      img: "/images/static4.png",
-      title: "Decor your bedroom",
-    },
-  ];
-
   return (
     <Box
       sx={{
@@ -39,6 +24,7 @@ export default function Articles() {
         gap: "48px",
         marginTop: "64px",
         marginBottom: "64px",
+        px: "132px",
       }}
     >
       <Box
@@ -76,57 +62,149 @@ export default function Articles() {
           gap: "32px",
         }}
       >
-        {articles.map((article, i) => (
-          <motion.div
-            key={i}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={boxVariants}
-            style={{ width: "30%", height: "100%" }}
+        <motion.div
+          custom={0}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={boxVariants}
+          style={{ width: "30%", height: "100%" }}
+        >
+          <Atropos
+            className="my-atropos"
+            activeOffset={40}
+            rotateXMax={20}
+            rotateYMax={20}
+            shadow={false}
           >
-            <Atropos
-              className="my-atropos"
-              activeOffset={40}
-              rotateXMax={20}
-              rotateYMax={20}
-              shadow={false}
-              style={{ height: "100%" }}
+            <Box
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+                justifyContent: "center",
+                width: "100%",
+                height: "100%",
+              }}
             >
-              <Box
-                style={{
+              <img
+                src="/images/static2.png"
+                alt="articles"
+                style={{ height: "80%", width: "100%" }}
+              />
+              <Typography sx={{ fontWeight: "bold", fontSize: "24px" }}>
+                7 ways to decor your home
+              </Typography>
+              <Typography
+                sx={{
                   display: "flex",
-                  flexDirection: "column",
-                  gap: "16px",
-                  justifyContent: "center",
-                  height: "100%",
+                  alignItems: "center",
+                  gap: "8px",
                   cursor: "pointer",
                 }}
               >
-                <img
-                  src={article.img}
-                  alt="articles"
-                  style={{ height: "80%", width: "100%" }}
-                />
-                <Typography sx={{ fontWeight: "bold", fontSize: "24px" }}>
-                  {article.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    cursor: "pointer",
-                  }}
-                >
-                  Read More
-                  <ArrowRightAltOutlinedIcon sx={{ fontSize: "24px" }} />
-                </Typography>
-              </Box>
-            </Atropos>
-          </motion.div>
-        ))}
+                Read More
+                <ArrowRightAltOutlinedIcon sx={{ fontSize: "24px" }} />
+              </Typography>
+            </Box>
+          </Atropos>
+        </motion.div>
+
+        <motion.div
+          custom={1}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={boxVariants}
+          style={{ width: "30%", height: "100%" }}
+        >
+          <Atropos
+            className="my-atropos"
+            activeOffset={40}
+            rotateXMax={20}
+            rotateYMax={20}
+            shadow={false}
+          >
+            <Box
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+                justifyContent: "center",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <img
+                src="/images/static3.png"
+                alt="articles"
+                style={{ height: "80%", width: "100%" }}
+              />
+              <Typography sx={{ fontWeight: "bold", fontSize: "24px" }}>
+                Kitchen organization
+              </Typography>
+              <Typography
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
+                Read More
+                <ArrowRightAltOutlinedIcon sx={{ fontSize: "24px" }} />
+              </Typography>
+            </Box>
+          </Atropos>
+        </motion.div>
+
+        <motion.div
+          custom={2}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={boxVariants}
+          style={{ width: "30%", height: "100%" }}
+        >
+          <Atropos
+            className="my-atropos"
+            activeOffset={40}
+            rotateXMax={20}
+            rotateYMax={20}
+            shadow={false}
+          >
+            <Box
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+                justifyContent: "center",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <img
+                src="/images/static4.png"
+                alt="articles"
+                style={{ height: "80%", width: "100%" }}
+              />
+              <Typography sx={{ fontWeight: "bold", fontSize: "24px" }}>
+                Decor your bedroom
+              </Typography>
+              <Typography
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  cursor: "pointer",
+                }}
+              >
+                Read More
+                <ArrowRightAltOutlinedIcon sx={{ fontSize: "24px" }} />
+              </Typography>
+            </Box>
+          </Atropos>
+        </motion.div>
       </Stack>
     </Box>
   );

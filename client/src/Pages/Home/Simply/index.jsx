@@ -8,6 +8,7 @@ export default function Simply() {
         justifyContent : 'space-between',
         alignItems : 'center' ,
         marginBottom:'48px',
+        px: "132px",
 
     }}>
       <Typography component={'h2'} variant='h1'>

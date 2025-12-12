@@ -21,6 +21,7 @@ export default function Category() {
         gap: "32px",
         height: "80vh",
         width: "100%",
+        px: "132px",
       }}
     >
       <Box sx={{ height: "100%", width: "50%" }}>{items[2]}</Box>

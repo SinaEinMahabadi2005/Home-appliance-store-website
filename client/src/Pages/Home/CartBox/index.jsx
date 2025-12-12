@@ -43,7 +43,7 @@ export default function CartBox() {
 
   return (
     <Stack
-      sx={{ height: "40vh", width: "100%", flexDirection: "row", gap: "32px" }}
+      sx={{ height: "40vh", width: "100%", flexDirection: "row", gap: "32px",px: "132px", }}
     >
       {boxes.map((box, i) => (
         <motion.div
@@ -66,6 +66,7 @@ export default function CartBox() {
               alignItems: "start",
               justifyContent: "center",
               padding: "48px",
+              
             }}
           >
             {box.icon}
