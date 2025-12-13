@@ -143,7 +143,7 @@ export default function ProductCard({ product }) {
                 marginBottom: "5px",
               }}
               name="text-feedback"
-              value={product.star}
+              value={product?.star}
               readOnly
               precision={0.5}
               emptyIcon={
