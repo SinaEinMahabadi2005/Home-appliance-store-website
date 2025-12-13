@@ -7,7 +7,6 @@ import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import { motion } from "framer-motion";
 
 export default function CartBox() {
-  // انیمیشن ورود برای هر باکس
   const boxVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.9 },
     visible: (i) => ({
@@ -20,22 +19,22 @@ export default function CartBox() {
 
   const boxes = [
     {
-      icon: <LocalShippingOutlinedIcon sx={{ fontSize: "48px" }} />,
+      icon: <LocalShippingOutlinedIcon sx={{ fontSize: { xs: "32px", sm: "40px", md: "48px" } }} />,
       title: "Free Shipping",
       desc: "Order above $200",
     },
     {
-      icon: <LocalAtmOutlinedIcon sx={{ fontSize: "48px" }} />,
+      icon: <LocalAtmOutlinedIcon sx={{ fontSize: { xs: "32px", sm: "40px", md: "48px" } }} />,
       title: "Money-back",
       desc: "30 days guarantee",
     },
     {
-      icon: <LockOutlinedIcon sx={{ fontSize: "48px" }} />,
+      icon: <LockOutlinedIcon sx={{ fontSize: { xs: "32px", sm: "40px", md: "48px" } }} />,
       title: "Secure Payments",
       desc: "Secured by Stripe",
     },
     {
-      icon: <LocalPhoneOutlinedIcon sx={{ fontSize: "48px" }} />,
+      icon: <LocalPhoneOutlinedIcon sx={{ fontSize: { xs: "32px", sm: "40px", md: "48px" } }} />,
       title: "24/7 Support",
       desc: "Phone and Email support",
     },
@@ -43,7 +42,14 @@ export default function CartBox() {
 
   return (
     <Stack
-      sx={{ height: "40vh", width: "100%", flexDirection: "row", gap: "32px",px: "132px", }}
+      sx={{ 
+        height: { xs: "auto", sm: "50vh", md: "40vh" },
+        width: "100%", 
+        flexDirection: { xs: "column", sm: "row" }, 
+        gap: { xs: "16px", sm: "24px", md: "32px" },
+        px: { xs: "16px", sm: "24px", md: "48px", lg: "64px", xl: "132px" },
+        py: { xs: "32px", sm: "40px", md: "48px" },
+      }}
     >
       {boxes.map((box, i) => (
         <motion.div
@@ -53,27 +59,48 @@ export default function CartBox() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
           variants={boxVariants}
-          style={{ width: "23%" }}
+          style={{ 
+            width: { xs: "100%", sm: "48%", md: "23%" } 
+          }}
         >
           <Box
             sx={{
               display: "flex",
-              flexDirection: "column",
-              gap: "32px",
+              flexDirection: { xs: "row", sm: "column" },
+              gap: { xs: "16px", sm: "20px", md: "24px", lg: "32px" },
               backgroundColor: "#F3F5F7 !important",
-              height: "70%",
+              height: { xs: "auto", sm: "100%" },
+              minHeight: { xs: "120px", sm: "200px", md: "70%" },
               borderRadius: "8px",
-              alignItems: "start",
-              justifyContent: "center",
-              padding: "48px",
-              
+              alignItems: { xs: "center", sm: "start" },
+              justifyContent: { xs: "flex-start", sm: "center" },
+              padding: { xs: "16px", sm: "24px", md: "32px", lg: "48px" },
+              width: "100%",
+              textAlign: { xs: "left", sm: "left" },
             }}
           >
             {box.icon}
-            <Typography sx={{ fontSize: "28px", fontWeight: "bold" }}>
-              {box.title}
-            </Typography>
-            <Typography sx={{ opacity: "0.7" }}>{box.desc}</Typography>
+            <Box sx={{ 
+              display: "flex", 
+              flexDirection: "column", 
+              gap: { xs: "4px", sm: "8px", md: "12px" },
+              flex: 1,
+            }}>
+              <Typography sx={{ 
+                fontSize: { xs: "18px", sm: "22px", md: "26px", lg: "28px" }, 
+                fontWeight: "bold",
+                lineHeight: 1.2,
+              }}>
+                {box.title}
+              </Typography>
+              <Typography sx={{ 
+                opacity: "0.7", 
+                fontSize: { xs: "14px", sm: "15px", md: "16px" },
+                lineHeight: 1.4,
+              }}>
+                {box.desc}
+              </Typography>
+            </Box>
           </Box>
         </motion.div>
       ))}
