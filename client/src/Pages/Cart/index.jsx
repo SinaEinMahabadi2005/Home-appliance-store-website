@@ -1,10 +1,11 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem } from "../../Store/Slice/CartSlice";
 
 export default function Cart() {
   const items = useSelector((state) => state.cart.items);
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
   const dispatch = useDispatch();
   const Boxes = items?.map((item) => (
     <Box
@@ -31,32 +32,32 @@ export default function Cart() {
         <img
           src={import.meta.env.VITE_FILE_URL + item?.images[0]?.url}
           alt={item?.name}
-          style={{ objectFit: "cover", height: "100%", width: "50%" }}
+          style={{ objectFit: "cover", height: "100%", width: "50px" }}
         />
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
             gap: "7px",
-            
-            fontSize:'12px'
+
+            fontSize: "12px",
           }}
         >
-          {item?.name.split(' ').slice(0,3).join(' ')} Color : Black 
-          <Typography fontSize={'12px'}>Remove</Typography>
+          {item?.name.split(" ").slice(0, 3).join(" ")} Color : Black
+          <Typography fontSize={"12px"}>Remove</Typography>
         </Box>
       </Box>
       <Box
         sx={{
           width: "15%",
           height: "100%",
-          backgroundColor: "#F3F5F7",
+          border: "1px solid black",
           borderRadius: "10px",
           display: item.cartQuantity === 0 ? "none" : "flex",
           alignItems: "center",
           justifyContent: "space-between",
           px: "32px",
-          transform:'translateX(-140px)'
+          transform: "translateX(-140px)",
         }}
       >
         <Typography
@@ -75,9 +76,13 @@ export default function Cart() {
           +
         </Typography>
       </Box>
-      <Typography fontWeight={'bold'} sx={{ transform:'translateX(-110px)'}}>${item.price}</Typography>
-      
-      <Typography fontWeight={'bold'}>${item.price * item.cartQuantity}</Typography>
+      <Typography fontWeight={"bold"} sx={{ transform: "translateX(-110px)" }}>
+        ${item.price}
+      </Typography>
+
+      <Typography fontWeight={"bold"}>
+        ${item.price * item.cartQuantity}
+      </Typography>
     </Box>
   ));
   return (
@@ -212,6 +217,101 @@ export default function Cart() {
             <Typography fontWeight={"bold"}>Subtotal</Typography>
           </Box>
           {Boxes}
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            width: "30%",
+            boxShadow: "0px 0px 10px rgba(0,0,0,0.1)",
+            borderRadius: "10px",
+            p: "16px",
+            gap: "24px",
+          }}
+        >
+          <Typography variant="h5" fontWeight={"bold"}>
+            Cart summary
+          </Typography>
+          <Box
+            sx={{
+              height: "70px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              px: "5px",
+              py: "3px",
+              backgroundColor: "#F3F5F7",
+              border: "1px solid gray",
+              borderRadius: "10px",
+            }}
+          >
+            <Typography fontWeight={"bold"}>
+              <input type="checkbox" style={{ color: "black" }} /> Free shipping
+            </Typography>
+            <Typography fontWeight={"bold"}>$0.00</Typography>
+          </Box>
+          <Box
+            sx={{
+              height: "70px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              px: "5px",
+              py: "3px",
+
+              border: "1px solid gray",
+              borderRadius: "10px",
+            }}
+          >
+            <Typography fontWeight={"bold"}>
+              <input type="checkbox" style={{ color: "black" }} /> Express
+              shipping
+            </Typography>
+            <Typography fontWeight={"bold"}>+$15.00</Typography>
+          </Box>
+          <Box
+            sx={{
+              height: "70px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              px: "5px",
+              py: "3px",
+
+              border: "1px solid gray",
+              borderRadius: "10px",
+            }}
+          >
+            <Typography fontWeight={"bold"}>
+              <input type="checkbox" style={{ color: "black" }} /> Pick Up
+            </Typography>
+            <Typography fontWeight={"bold"}>%21.00</Typography>
+          </Box>
+          <Box
+            borderBottom={"1px solid rgba(0,0,0,0.1)"}
+            pb={"20px"}
+            display={"flex"}
+            justifyContent={"space-between"}
+          >
+            <p style={{ fontWeight: "bold" }}>Subtotal</p>{" "}
+            <p style={{ fontWeight: "bold" }}>${totalPrice}</p>
+          </Box>
+          <Box
+            borderBottom={"1px solid rgnba(0,0,0,0.1)"}
+            pb={"20px"}
+            display={"flex"}
+            justifyContent={"space-between"}
+          >
+            <p style={{ fontWeight: "bold" }}>Total</p>{" "}
+            <p style={{ fontWeight: "bold" }}>${totalPrice+15}</p>
+          </Box>
+          <Button variant="contained" sx={{ width: "100%", height: "50px" , backgroundColor:'#141718' }}>
+            Checkout
+          </Button>
         </Box>
       </Stack>
     </Box>

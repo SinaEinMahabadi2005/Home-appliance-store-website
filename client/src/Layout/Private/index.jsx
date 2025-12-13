@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux'
 import { Navigate, Outlet } from 'react-router-dom'
 
 export default function PrivateLayout() {
-  const {token}=useSelector(state=>state.auth)
-  // const token=localStorage.getItem("jwt")
+  // const {token}=useSelector(state=>state.auth)
+  const token=localStorage.getItem("jwt")
   if(!token){
     return <Navigate to='/auth'/>
   }
