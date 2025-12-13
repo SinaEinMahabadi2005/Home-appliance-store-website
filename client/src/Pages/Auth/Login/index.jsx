@@ -25,6 +25,7 @@ export default function LoginForm({ handlePageTypeChange }) {
       if (data.jwt) {
         notify("success", "Login successful! Welcome back");
         dispatch(login(data));
+        localStorage.setItem("jwt",data.jwt)
       } else {
         notify("error", "Login failed");
       }

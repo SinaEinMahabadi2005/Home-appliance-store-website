@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Badge from "@mui/material/Badge";
 import { useNavigate, useParams } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Navbar() {
   const { token } = useSelector((state) => state.auth);
@@ -35,6 +36,7 @@ export default function Navbar() {
         }}
       >
         <Link
+        component={RouterLink}
           sx={{
             color: "black",
             fontWeight: "bold",
@@ -46,11 +48,12 @@ export default function Navbar() {
              borderBottom: "3px solid black",
             },
           }}
-          href="/"
+          to="/"
         >
           Home
         </Link>
         <Link
+        component={RouterLink}
           sx={{
             color: "black",
             opacity: "0.7",
@@ -62,11 +65,12 @@ export default function Navbar() {
               borderBottom: "3px solid black",
             },
           }}
-          href="/profile"
+          to="/profile"
         >
           Profile
         </Link>
         <Link
+        component={RouterLink}
           sx={{
             color: "black",
             opacity: "0.7",
@@ -78,11 +82,12 @@ export default function Navbar() {
               borderBottom: "3px solid black",
             },
           }}
-          href="/products/all/all-category"
+          to="/products/all/all-category"
         >
           Product
         </Link>
         <Link
+        component={RouterLink}
           sx={{
             color: "black",
             opacity: "0.7",
@@ -94,7 +99,7 @@ export default function Navbar() {
               borderBottom: "3px solid black",
             },
           }}
-          href="/about"
+          to="/about"
         >
           Contact Us
         </Link>
@@ -107,7 +112,8 @@ export default function Navbar() {
       >
         <SearchIcon sx={{ cursor: "pointer" }} />
         <Link
-          href="/auth"
+        component={RouterLink}
+          to="/auth"
           sx={{ color: "black", transform: "translateY(3px)" }}
         >
           <AccountCircleIcon />
