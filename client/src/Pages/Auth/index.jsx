@@ -2,12 +2,18 @@ import { useState } from "react";
 import LoginForm from "./Login";
 import Register from "./Register";
 import { Box, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 export default function Auth() {
+  const {token}=useSelector(state=>state.auth)
   const [pageType, setPageType] = useState("register");
   const handlePageTypeChange = () => {
     setPageType(pageType === "login" ? "register" : "login");
   };
+  if(token){
+    return <Navigate to='/profile'/>
+  }
   return (
     <Box display={"flex"} height={"100vh"} sx={{ width: "100%" }}>
       <Box

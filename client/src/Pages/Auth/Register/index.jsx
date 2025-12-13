@@ -54,7 +54,7 @@ export default function Register({ handlePageTypeChange }) {
       <Typography variant="h4">Sing up</Typography>
       <Typography color="gray" fontWeight={"bold"}>
         Already have an account?
-        <span style={{ color: "#38CB89" }}> Sign in</span>
+        <span onClick={()=>handlePageTypeChange('login')} style={{ color: "#38CB89" , cursor: "pointer" }}> Sign in</span>
       </Typography>
       <TextField
         sx={{ width: "100%" }}
