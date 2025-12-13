@@ -6,22 +6,25 @@ import { motion } from "framer-motion";
 
 export default function CategoryCard({ category }) {
   const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(
+      `/products/${category.documentId || category.id}/${category.title.replaceAll(" ", "-")}`
+    );
+  };
+
   return (
     <Box
       sx={{
-        gap: "32px",
-        // backgroundColor: "#F3F5F7",
-        height: "100%",
+        gap: { xs: "16px", sm: "24px", md: "32px" },
+        height: { xs: "250px", sm: "300px", md: "350px", lg: "100%" },
         width: "100%",
         position: "relative",
         perspective: "1000px", 
-        cursor:'pointer' ,
+        cursor: 'pointer',
+        minHeight: { xs: "250px", sm: "300px" },
+        overflow: "hidden",
       }}
-      onClick={() =>
-          navigate(
-            `/products/${category.documentId}/${category.title.replaceAll(" ", "-")}`
-          )
-        }
+      onClick={handleClick}
     >
       <Typography
         component={"h3"}
@@ -29,9 +32,10 @@ export default function CategoryCard({ category }) {
         sx={{
           fontWeight: "bold",
           position: "absolute",
-          left: "48px",
-          top: "48px",
-          zIndex:'1000'
+          left: { xs: "16px", sm: "24px", md: "32px", lg: "48px" },
+          top: { xs: "16px", sm: "24px", md: "32px", lg: "48px" },
+          zIndex: '1000',
+          fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.75rem", lg: "2rem" },
         }}
       >
         {category?.title}
@@ -43,21 +47,18 @@ export default function CategoryCard({ category }) {
           display: "flex",
           alignItems: "center",
           position: "absolute",
-          left: "48px",
-          top: "100px",
-          zIndex:'1000' ,
+          left: { xs: "16px", sm: "24px", md: "32px", lg: "48px" },
+          top: { xs: "48px", sm: "64px", md: "80px", lg: "100px" },
+          zIndex: '1000',
           borderBottom: "1px solid black",
+          fontSize: { xs: "0.75rem", sm: "0.875rem", md: "1rem" },
+          paddingBottom: "2px",
         }}
-        onClick={() =>
-          navigate(
-            `/products/${category.id}/${category.title.replaceAll(" ", "-")}`
-          )
-        }
+        onClick={handleClick}
       >
-        Shop Now <ArrowForwardIcon />
+        Shop Now <ArrowForwardIcon sx={{ fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" } }} />
       </Typography>
 
-      
       <motion.img
         src={import.meta.env.VITE_FILE_URL + category?.image?.url}
         alt={category?.title}
