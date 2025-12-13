@@ -60,7 +60,7 @@ export default function MainSlider() {
   const getHorizontalPadding = () => {
     if (isMobile) return "16px";
     if (isTablet) return "24px";
-    if (isDesktop) return "48px";
+    if (isDesktop) return "132px";
     return "132px"; // Original padding on large desktop
   };
 
@@ -100,6 +100,7 @@ export default function MainSlider() {
   return (
     <Box
       sx={{
+        
         height: getSliderHeight(),
         width: "100%",
         margin: "0 auto",
