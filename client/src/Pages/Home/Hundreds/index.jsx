@@ -35,7 +35,7 @@ export default function Hundreds() {
       <Box sx={{ 
         height: { xs: "auto", sm: "100%" }, 
         width: { xs: "100%", sm: "50%" }, 
-        backgroundColor: "#F3F57", 
+        backgroundColor: "#F3F5F7", 
         display: 'flex', 
         flexDirection: 'column', 
         justifyContent: 'center', 
@@ -44,6 +44,7 @@ export default function Hundreds() {
         px: { xs: "16px", sm: "32px", md: "48px", lg: "60px" },
         py: { xs: "32px", sm: "40px", md: "48px" },
         textAlign: { xs: "center", sm: "left" },
+        
       }}>
         <Typography sx={{
           fontSize: { xs: "14px", sm: "15px", md: "16px" }, 

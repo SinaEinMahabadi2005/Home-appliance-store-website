@@ -45,6 +45,7 @@ export default function CartBox() {
       sx={{ 
         height: { xs: "auto", sm: "50vh", md: "40vh" },
         width: "100%", 
+        justifyContent:'center',
         flexDirection: { xs: "column", sm: "row" }, 
         gap: { xs: "16px", sm: "24px", md: "32px" },
         px: { xs: "16px", sm: "24px", md: "48px", lg: "64px", xl: "132px" },

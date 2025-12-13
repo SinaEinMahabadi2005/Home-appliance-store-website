@@ -22,7 +22,7 @@ export default function NewArrival() {
     
     useEffect(() => {
         (async() => {
-            const response = await fetchData('products?pagination[page]=1&pagination[pageSize]=7&sort=createdAt:desc&populate=*');
+            const response = await fetchData('products?pagination[page]=1&pagination[pageSize]=7&sort=updatedAt:desc&populate=*');
             setNewArrivals(response?.data);
         })();
     }, []);
