@@ -1,5 +1,5 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import notify from "../../../Utils/notify";
 import { useDispatch } from "react-redux";
 import { login } from "../../../Store/Slice/AuthSlice";
@@ -8,6 +8,7 @@ export default function LoginForm({ handlePageTypeChange }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -33,6 +34,7 @@ export default function LoginForm({ handlePageTypeChange }) {
       console.log(error);
     }
   };
+  
   return (
     <Box
       onSubmit={handleSubmit}
@@ -41,70 +43,123 @@ export default function LoginForm({ handlePageTypeChange }) {
         display: "flex",
         justifyContent: "start",
         alignItems: "start",
-        gap: "24px",
+        gap: { xs: "16px", sm: "20px", md: "24px" },
         flexDirection: "column",
-        pr: "232px",
-        pl: "132px",
-        mt: "64px",
+        pr: { xs: "16px", sm: "32px", md: "96px", lg: "164px", xl: "232px" },
+        pl: { xs: "16px", sm: "24px", md: "48px", lg: "96px", xl: "132px" },
+        mt: { xs: "32px", sm: "48px", md: "64px" },
+        pt: { xs: "16px", sm: "24px", md: "32px" },
+        pb: { xs: "32px", sm: "48px", md: "64px" },
         width: "100%",
-        height: "100%",
+        minHeight: { xs: "calc(100vh - 100px)", sm: "auto" },
+        maxWidth: { xs: "100%", sm: "600px", md: "800px", lg: "100%" },
+        mx: { xs: "auto", md: "0" },
       }}
     >
-      <Typography variant="h4">Sign in</Typography>
-      <Typography color="gray" fontWeight={"bold"}>
+      <Typography variant="h4" sx={{ 
+        fontSize: { xs: "1.5rem", sm: "1.75rem", md: "2rem", lg: "2.5rem" },
+        fontWeight: "bold",
+      }}>
+        Sign in
+      </Typography>
+      
+      <Typography color="gray" fontWeight={"bold"} sx={{ 
+        fontSize: { xs: "14px", sm: "15px", md: "16px" },
+        lineHeight: 1.5,
+      }}>
         Don't have an account?
         <span
           style={{ color: "#38CB89", cursor: "pointer" }}
           onClick={() => handlePageTypeChange("register")}
         >
           {" "}
-          Sign in
+          Sign up
         </span>
       </Typography>
 
       <TextField
-        sx={{ width: "100%" }}
-        id="standard-basic"
+        sx={{ 
+          width: "100%",
+          "& .MuiInputLabel-root": {
+            fontSize: { xs: "14px", sm: "15px", md: "16px" },
+          },
+          "& .MuiInputBase-input": {
+            fontSize: { xs: "14px", sm: "15px", md: "16px" },
+          },
+        }}
+        id="email"
         label="Email address"
         variant="standard"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        autoComplete="email"
       />
+      
       <TextField
-        sx={{ width: "100%" }}
-        id="standard-basic"
+        sx={{ 
+          width: "100%",
+          "& .MuiInputLabel-root": {
+            fontSize: { xs: "14px", sm: "15px", md: "16px" },
+          },
+          "& .MuiInputBase-input": {
+            fontSize: { xs: "14px", sm: "15px", md: "16px" },
+          },
+        }}
+        id="password"
         label="Password"
         variant="standard"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        autoComplete="current-password"
       />
+      
       <Typography
         sx={{
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "10px",
+          flexDirection: { xs: "column", sm: "row" },
+          justifyContent: { xs: "flex-start", sm: "center" },
+          alignItems: { xs: "flex-start", sm: "center" },
+          gap: { xs: "8px", sm: "10px" },
           fontWeight: "bold",
           color: "gray",
+          fontSize: { xs: "13px", sm: "14px", md: "15px" },
+          lineHeight: 1.4,
+          width: "100%",
+          flexWrap: "wrap",
         }}
       >
-        <input
-          type="checkbox"
-          name="remember"
-          id=""
-          style={{ height: "32px" }}
-        />
-        I agree with <span style={{ color: "black" }}>Privacy Policy</span> and{" "}
-        <span style={{ color: "black" }}>Terms of Use</span>
+        <Box sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <input
+            type="checkbox"
+            name="remember"
+            style={{ 
+              height: { xs: "20px", sm: "24px", md: "32px" },
+              width: { xs: "20px", sm: "24px", md: "32px" },
+            }}
+          />
+          I agree with
+        </Box>
+        <Box sx={{ display: "flex", gap: "4px", flexWrap: "wrap" }}>
+          <span style={{ color: "black", cursor: "pointer" }}>Privacy Policy</span>
+          and
+          <span style={{ color: "black", cursor: "pointer" }}>Terms of Use</span>
+        </Box>
       </Typography>
+      
       <Button
         type="submit"
         sx={{
           width: "100%",
-          height: "5%",
+          height: { xs: "48px", sm: "52px", md: "56px" },
           backgroundColor: "#141718",
           color: "white",
+          fontSize: { xs: "14px", sm: "15px", md: "16px" },
+          fontWeight: "bold",
+          "&:hover": {
+            backgroundColor: "#000",
+          },
+          mt: { xs: "16px", sm: "24px" },
         }}
       >
         Sign in
