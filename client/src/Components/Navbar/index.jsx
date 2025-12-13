@@ -5,13 +5,13 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useSelector } from "react-redux";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import Badge from "@mui/material/Badge";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Navbar() {
   const { token } = useSelector((state) => state.auth);
   const cartLength = useSelector((state) => state.cart.items).length;
   const navigate = useNavigate();
-
+  
   return (
     <Box
       component={"nav"}
@@ -41,8 +41,9 @@ export default function Navbar() {
             transition: "all .5s",
             p: "3px",
             borderRadius: "10px",
+             borderBottom: "3px solid transparent",
             "&:hover": {
-              boxShadow: " 0 0 10px 10px rgba(220, 104, 16, 0.3)",
+             borderBottom: "3px solid black",
             },
           }}
           href="/"
@@ -56,8 +57,9 @@ export default function Navbar() {
             transition: "all .5s",
             p: "3px",
             borderRadius: "10px",
+              borderBottom: "3px solid transparent",
             "&:hover": {
-              boxShadow: " 0 0 10px 10px rgba(220, 104, 16, 0.3)",
+              borderBottom: "3px solid black",
             },
           }}
           href="/profile"
@@ -71,8 +73,9 @@ export default function Navbar() {
             transition: "all .5s",
             p: "3px",
             borderRadius: "10px",
+              borderBottom: "3px solid transparent",
             "&:hover": {
-              boxShadow: " 0 0 10px 10px rgba(220, 104, 16, 0.3)",
+              borderBottom: "3px solid black",
             },
           }}
           href="/products/all/all-category"
@@ -86,8 +89,9 @@ export default function Navbar() {
             transition: "all .5s",
             p: "3px",
             borderRadius: "10px",
+              borderBottom: "3px solid transparent",
             "&:hover": {
-              boxShadow: " 0 0 10px 10px rgba(220, 104, 16, 0.3)",
+              borderBottom: "3px solid black",
             },
           }}
           href="/about"
