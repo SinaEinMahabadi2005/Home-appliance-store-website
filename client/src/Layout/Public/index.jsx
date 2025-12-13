@@ -6,7 +6,7 @@ export default function PublicLayout() {
   const {token}=useSelector(state=>state.auth)
   // const token=localStorage.getItem("jwt")
   if(token){
-    return <Navigate to='/profile'/>
+    return <Navigate to='/'/>
   }
   return (
     <>

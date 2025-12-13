@@ -150,6 +150,7 @@ export default function Navbar() {
             sx={{ fontWeight: "bold" }}
           >
             3legant
+            
           </Typography>
         </Box>
 
