@@ -12,3 +12,7 @@
 .swiper-pagination{
   display: none;
 }
+.my-atropos:hover .moreBtn {
+  opacity: 1 !important;
+  visibility: visible;
+}

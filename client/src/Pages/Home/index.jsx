@@ -18,7 +18,6 @@ export default function Home() {
       <CartBox/>
       <Hundreds/>
       <Articles/>
-      <JoinSection/>
     </>
   )
 }

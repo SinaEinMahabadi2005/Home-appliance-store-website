@@ -108,6 +108,7 @@ export default function NewArrivalCard({ product }) {
               }}
             />
             <Button
+            className="moreBtn"
               sx={{
                 color: "white",
                 backgroundColor: "black",
