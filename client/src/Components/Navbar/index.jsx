@@ -25,7 +25,7 @@ export default function Navbar() {
 
   const navLinks = [
     { to: "/", label: "Home", bold: true },
-    { to: "/profile", label: "Profile", bold: false },
+    // { to: "/profile", label: "Profile", bold: false },
     { to: "/products/all/all-category", label: "Product", bold: false },
     { to: "/about", label: "Contact Us", bold: false },
   ];
