@@ -45,10 +45,10 @@ export default function JoinSection() {
         fontWeight={"bold"}
         sx={{
           fontSize: {
-            xs: "1.75rem",  // ~28px Mobile
-            sm: "2.25rem",  // ~36px Tablet
-            md: "2.5rem",   // ~40px Desktop
-            lg: "3rem",     // ~48px Large desktop
+            xs: "1.75rem", // ~28px Mobile
+            sm: "2.25rem", // ~36px Tablet
+            md: "2.5rem",  // ~40px Desktop
+            lg: "3rem",    // ~48px Large desktop
           },
           lineHeight: {
             xs: 1.2,
